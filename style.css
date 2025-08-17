@@ -1,6 +1,117 @@
-body { font-family: Arial; background: #fff3e0; color: #333; padding: 20px; }
-h1 { color: #ff8c00; text-align: center; }
-button { background: #ff8c00; color: white; border: none; padding: 10px; margin: 5px; border-radius: 5px; }
-input { padding: 10px; width: 80%; margin-bottom: 10px; }
-ul { list-style: none; padding: 0; }
-li { background: #ffe0b2; margin: 5px 0; padding: 10px; border-radius: 5px; }
+/* Reset simple */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background: #fff8f0;
+    color: #333;
+}
+
+header {
+    background-color: #ff6f61;
+    color: white;
+    padding: 20px;
+    text-align: center;
+    font-size: 2em;
+}
+
+main {
+    padding: 20px;
+}
+
+#categories {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.category {
+    padding: 10px 15px;
+    background-color: #ffd6a5;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.category:hover {
+    background-color: #ffb347;
+}
+
+#search-container {
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+#search-input {
+    width: 80%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1em;
+}
+
+#add-category, #add-video {
+    margin-bottom: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+#add-category input, #add-video input, #add-video textarea, #add-video select {
+    padding: 8px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+}
+
+#add-btn, #category-btn {
+    background-color: #ff6f61;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#add-btn:hover, #category-btn:hover {
+    background-color: #ff3b2e;
+}
+
+#recipes {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.recipe {
+    background-color: #fff3e6;
+    padding: 15px;
+    border-radius: 10px;
+    box-shadow: 0px 2px 5px rgba(0,0,0,0.1);
+}
+
+.copy-btn {
+    margin-top: 10px;
+    padding: 5px 10px;
+    background-color: #ffd6a5;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.copy-btn:hover {
+    background-color: #ffb347;
+}
+
+footer {
+    text-align: center;
+    margin: 20px 0;
+    font-size: 0.9em;
+    color: #666;
+}
