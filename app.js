@@ -1,34 +1,39 @@
-let recipes = JSON.parse(localStorage.getItem('recipes') || '[]');
+// Exemple de catégories
+const categories = ["Sucré", "Salé", "Bébé"];
 
-function render() {
-  const list = document.getElementById('recipeList');
-  list.innerHTML = '';
-  recipes.forEach((r, i) => {
-    const li = document.createElement('li');
-    li.textContent = r.name + " (" + r.category + ")";
-    list.appendChild(li);
-  });
+// Exemple de recettes (à compléter)
+const recipes = [
+    { name: "Crêpes", category: "Sucré", description: "Ingrédients et étapes ici..." },
+    { name: "Purée de carottes", category: "Bébé", description: "Ingrédients et étapes ici..." }
+];
+
+// Afficher les catégories
+const categoriesContainer = document.getElementById("categories");
+categories.forEach(cat => {
+    const div = document.createElement("div");
+    div.classList.add("category");
+    div.textContent = cat;
+    div.addEventListener("click", () => filterRecipes(cat));
+    categoriesContainer.appendChild(div);
+});
+
+// Afficher toutes les recettes par défaut
+const recipesContainer = document.getElementById("recipes");
+function displayRecipes(list) {
+    recipesContainer.innerHTML = "";
+    list.forEach(r => {
+        const div = document.createElement("div");
+        div.classList.add("recipe");
+        div.innerHTML = <h3>${r.name}</h3><p>${r.description}</p>;
+        recipesContainer.appendChild(div);
+    });
 }
 
-document.getElementById('addBtn').onclick = () => {
-  const name = prompt("Nom de la recette:");
-  const category = prompt("Catégorie (Sucré / Salé / Bébé):");
-  if(name && category) {
-    recipes.push({name, category});
-    localStorage.setItem('recipes', JSON.stringify(recipes));
-    render();
-  }
-};
+// Filtrer les recettes par catégorie
+function filterRecipes(category) {
+    const filtered = recipes.filter(r => r.category === category);
+    displayRecipes(filtered);
+}
 
-document.getElementById('search').oninput = (e) => {
-  const term = e.target.value.toLowerCase();
-  const list = document.getElementById('recipeList');
-  list.innerHTML = '';
-  recipes.filter(r => r.name.toLowerCase().includes(term)).forEach(r => {
-    const li = document.createElement('li');
-    li.textContent = r.name + " (" + r.category + ")";
-    list.appendChild(li);
-  });
-};
-
-render();
+// Affichage initial
+displayRecipes(recipes);
