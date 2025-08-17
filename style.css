@@ -1,0 +1,6 @@
+body { font-family: Arial; background: #fff3e0; color: #333; padding: 20px; }
+h1 { color: #ff8c00; text-align: center; }
+button { background: #ff8c00; color: white; border: none; padding: 10px; margin: 5px; border-radius: 5px; }
+input { padding: 10px; width: 80%; margin-bottom: 10px; }
+ul { list-style: none; padding: 0; }
+li { background: #ffe0b2; margin: 5px 0; padding: 10px; border-radius: 5px; }
