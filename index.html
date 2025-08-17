@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Recettes</title>
+    <title>Mes Recettes</title>
     <link rel="stylesheet" href="style.css">
     <link rel="manifest" href="manifest.json">
     <link rel="icon" href="icon.png" type="image/png">
@@ -14,13 +14,31 @@
     </header>
 
     <main>
-        <section id="categories">
-            <!-- Les catégories seront ajoutées ici via app.js -->
-        </section>
+        <!-- Ajouter une nouvelle catégorie -->
+        <div id="add-category">
+            <input type="text" id="category-input" placeholder="Nouvelle catégorie">
+            <button id="category-btn">Ajouter catégorie</button>
+        </div>
 
-        <section id="recipes">
-            <!-- Les recettes seront affichées ici -->
-        </section>
+        <!-- Affichage des catégories -->
+        <section id="categories"></section>
+
+        <!-- Barre de recherche -->
+        <div id="search-container">
+            <input type="text" id="search-input" placeholder="Rechercher une recette...">
+        </div>
+
+        <!-- Ajouter une nouvelle vidéo -->
+        <div id="add-video">
+            <input type="text" id="video-link" placeholder="Coller le lien de la vidéo">
+            <input type="text" id="recipe-name" placeholder="Nom de la recette">
+            <select id="recipe-category"></select>
+            <textarea id="recipe-desc" placeholder="Description/ingrédients"></textarea>
+            <button id="add-btn">Ajouter la vidéo</button>
+        </div>
+
+        <!-- Affichage des recettes -->
+        <section id="recipes"></section>
     </main>
 
     <footer>
